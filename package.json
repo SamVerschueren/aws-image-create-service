@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/SamVerschueren/selfie-wall-create-service/issues"
   },
-  "homepage": "https://github.com/SamVerschueren/selfie-wall-create-service"
+  "homepage": "https://github.com/SamVerschueren/selfie-wall-create-service",
+  "devDependencies": {
+    "decamelize": "^1.0.0",
+    "gulp": "^3.9.0"
+  }
 }
