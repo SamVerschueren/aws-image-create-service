@@ -26,7 +26,7 @@ var Selfie = db.table('Selfie');
 exports.handler = function(event, context) {
     Q.fcall(function() {
         // Insert the selfie in the database
-        return Selfie.insert({email: event.email, date: moment().format()}, {description: event.description, selfie: event.selfie}).exec();
+        return Selfie.insert({email: event.email, date: moment().format('YYYY-MM-DD[T]HH:mm:ss[T]')}, {description: event.description, selfie: event.selfie}).exec();
     }).then(function() {
         // Selfie successfully inserted
         context.succeed();
