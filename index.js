@@ -14,5 +14,5 @@
  * @param {object}  context     The AWS Lambda execution context.
  */
 exports.handler = function(event, context) {
-    context.succeed(event);
+    context.succeed({body: event});
 };
