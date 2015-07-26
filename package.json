@@ -25,5 +25,10 @@
     "decamelize": "^1.0.0",
     "gulp": "^3.9.0",
     "gulp-zip": "^3.0.2"
+  },
+  "dependencies": {
+    "dynongo": "0.0.6",
+    "moment": "^2.10.5",
+    "q": "^1.4.1"
   }
 }
