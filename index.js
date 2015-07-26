@@ -25,8 +25,11 @@ var Selfie = db.table('Selfie');
  */
 exports.handler = function(event, context) {
     Q.fcall(function() {
+        // Make sure the date is in utc
+        var date = moment().utc().format('YYYY-MM-DD[T]HH:mm:ss[Z]');
+        
         // Insert the selfie in the database
-        return Selfie.insert({email: event.email, date: moment().format('YYYY-MM-DD[T]HH:mm:ss[Z]')}, {description: event.description, selfie: event.selfie}).exec();
+        return Selfie.insert({email: event.email, date: date}, {description: event.description, selfie: event.selfie}).exec();
     }).then(function() {
         // Selfie successfully inserted
         context.succeed();
