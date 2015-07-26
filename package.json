@@ -27,7 +27,7 @@
     "gulp-zip": "^3.0.2"
   },
   "dependencies": {
-    "dynongo": "0.0.6",
+    "dynongo": "0.0.7",
     "moment": "^2.10.5",
     "q": "^1.4.1"
   }
