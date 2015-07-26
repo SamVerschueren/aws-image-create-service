@@ -23,6 +23,7 @@
   "homepage": "https://github.com/SamVerschueren/selfie-wall-create-service",
   "devDependencies": {
     "decamelize": "^1.0.0",
-    "gulp": "^3.9.0"
+    "gulp": "^3.9.0",
+    "gulp-zip": "^3.0.2"
   }
 }
