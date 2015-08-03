@@ -25,11 +25,24 @@ var Selfie = db.table('Selfie');
  */
 exports.handler = function(event, context) {
     Q.fcall(function() {
-        // Make sure the date is in utc
-        var date = moment().utc().format('YYYY-MM-DD[T]HH:mm:ss[Z]');
+        // Build up the key
+        var key = {
+            email: event.email,
+            date: moment().utc().format('YYYY-MM-DD[T]HH:mm:ss[Z]')
+        };
+        
+        // Build up the body
+        var body = {
+            selfie: event.selfie
+        };
+        
+        if(event.description) {
+            // Add the description if a description is provided
+            body.description = event.description;
+        }
         
         // Insert the selfie in the database
-        return Selfie.insert({email: event.email, date: date}, {description: event.description || '', selfie: event.selfie}).exec();
+        return Selfie.insert(key, body).exec();
     }).then(function() {
         // Selfie successfully inserted
         context.succeed();
