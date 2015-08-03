@@ -34,6 +34,9 @@ exports.handler = function(event, context) {
         // Selfie successfully inserted
         context.succeed();
     }).catch(function(err) {
+        // Print the error if something went wrong
+        console.error(err, err.stack);
+        
         // Something went wrong
         context.fail(err);
     });
