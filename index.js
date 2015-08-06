@@ -33,7 +33,8 @@ exports.handler = function(event, context) {
         
         // Build up the body
         var body = {
-            selfie: event.selfie
+            selfie: event.selfie,
+            active: true
         };
         
         if(event.description) {
