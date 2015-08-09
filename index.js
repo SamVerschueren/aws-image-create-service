@@ -25,16 +25,20 @@ var Selfie = db.table('Selfie');
  */
 exports.handler = function(event, context) {
     Q.fcall(function() {
+        // Parse the date provided
+        var date = moment(event.date);
+        
         // Build up the key
         var key = {
-            email: event.email,
-            date: moment().utc().format('YYYY-MM-DD[T]HH:mm:ss[Z]')
+            id: event.email + '-' + getRandomInt(1, 200),
+            date: date.format()
         };
         
         // Build up the body
         var body = {
-            selfie: event.selfie,
-            active: 1
+            email: event.email,
+            image: event.image,
+            day: date.format('YYYY-MM-DD')
         };
         
         if(event.description) {
@@ -55,3 +59,11 @@ exports.handler = function(event, context) {
         context.fail(err);
     });
 };
+
+/**
+ * Returns a random integer between min (inclusive) and max (inclusive)
+ * Using Math.round() will give you a non-uniform distribution!
+ */
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
