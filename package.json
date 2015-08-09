@@ -1,7 +1,7 @@
 {
   "name": "AWSImage-Create",
   "version": "0.0.1",
-  "description": "Microservice that allows user to post a new selfie.",
+  "description": "AWS Lambda microservice that stores the metadata of an uploaded image in the database.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
