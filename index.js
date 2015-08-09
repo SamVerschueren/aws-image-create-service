@@ -39,7 +39,7 @@ exports.handler = function(event, context) {
         
         // Build up the body
         var body = {
-            subid: date.format('YYYY-MM-DD') + '_' + date.format('HH') + '_' + getRandomInt(1, 200),
+            subid: date.format('YYYY-MM-DD') + '_' + date.format('HH') + '_' + getRandomInt(1, 20),
             name: event.name,
             email: event.email,
             image: event.image
