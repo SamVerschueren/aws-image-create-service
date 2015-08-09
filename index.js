@@ -33,16 +33,16 @@ exports.handler = function(event, context) {
         
         // Build up the key
         var key = {
-            id: event.id + '-' + getRandomInt(1, 200),
+            id: event.id + '_' + getRandomInt(1, 200),
             date: date.format()
         };
         
         // Build up the body
         var body = {
+            subid: date.format('YYYY-MM-DD') + '_' + date.format('HH') + '_' + getRandomInt(1, 200),
             name: event.name,
             email: event.email,
-            image: event.image,
-            day: date.format('YYYY-MM-DD')
+            image: event.image
         };
         
         if(event.description) {
