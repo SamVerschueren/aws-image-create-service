@@ -34,7 +34,7 @@ exports.handler = function(event, context) {
         // Build up the key
         var key = {
             id: event.id + '-' + getRandomInt(1, 200),
-            date: date.format()
+            date: event.date
         };
         
         // Build up the body
