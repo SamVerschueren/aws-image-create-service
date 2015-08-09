@@ -24,13 +24,16 @@ var Selfie = db.table('Selfie');
  * @param {object}  context     The AWS Lambda execution context.
  */
 exports.handler = function(event, context) {
+    // Log the event for debugging purposes
+    console.log(event);
+    
     Q.fcall(function() {
         // Parse the date provided
         var date = moment(event.date);
         
         // Build up the key
         var key = {
-            id: event.email + '-' + getRandomInt(1, 200),
+            id: event.id + '-' + getRandomInt(1, 200),
             date: date.format()
         };
         
@@ -46,13 +49,8 @@ exports.handler = function(event, context) {
             body.description = event.description;
         }
         
-        console.log(key);
-        console.log(body);
-        
-        return key;
-        
         // Insert the selfie in the database
-        //return Selfie.insert(key, body).exec();
+        return Selfie.insert(key, body).exec();
     }).then(function() {
         // Selfie successfully inserted
         context.succeed();
