@@ -1,6 +1,6 @@
-# selfie-wall-create-service
+# aws-image-create-service
 
-> Microservice that allows user to post a new selfie.
+> AWS Lambda microservice that stores the metadata of an uploaded image in the database.
 
 ## Author
 
