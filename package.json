@@ -1,5 +1,5 @@
 {
-  "name": "SelfieWall-Create",
+  "name": "AWSImage-Create",
   "version": "0.0.1",
   "description": "Microservice that allows user to post a new selfie.",
   "main": "index.js",
