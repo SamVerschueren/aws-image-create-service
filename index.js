@@ -39,6 +39,7 @@ exports.handler = function(event, context) {
         
         // Build up the body
         var body = {
+            name: event.name,
             email: event.email,
             image: event.image,
             day: date.format('YYYY-MM-DD')
