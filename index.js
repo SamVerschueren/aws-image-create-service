@@ -34,11 +34,12 @@ exports.handler = function(event, context) {
         // Build up the key
         var key = {
             id: date.format('YYYY-MM-DD'),
-            date: date.format()
+            dateId: date.format() + '_' + event.id
         };
         
         // Build up the body
         var body = {
+            date: date.format(),
             name: event.name,
             email: event.email,
             image: event.image
