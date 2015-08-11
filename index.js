@@ -51,9 +51,9 @@ exports.handler = function(event, context) {
         
         // Insert the selfie in the database
         return Selfie.insert(key, body).exec();
-    }).then(function() {
+    }).then(function(item) {
         // Selfie successfully inserted
-        context.succeed();
+        context.succeed(item);
     }).catch(function(err) {
         // Print the error if something went wrong
         console.log(err, err.stack);
